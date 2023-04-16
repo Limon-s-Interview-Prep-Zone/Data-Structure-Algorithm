@@ -20,7 +20,7 @@ int main()
 
     cout << "Displaying information." << endl;
     cout << "Distance = " << (*ptr).feet << " feet " << (*ptr).inch << " inches" << endl;
-    cout << "Using -> = " << ptr->feet << " feet " << (*ptr).inch << " inches";//  ptr->feet same as (*ptr).distance;
+    cout << "Using -> = " << ptr->feet << " feet " << (*ptr).inch << " inches"; //  ptr->feet same as (*ptr).distance;
 
     return 0;
 }
