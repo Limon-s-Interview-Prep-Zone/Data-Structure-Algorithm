@@ -17,16 +17,17 @@ void pointerInit()
 
 void changePointerValue()
 {
-    int a = 12;
-    int *b = &a;
-    cout << "Value of a:" << a << "\t Value of b: " << *b << endl; // this will print the memory location of a given variable
-    *b = 100;
+    int a = 12, b = 14;
+    int *c = &a;
+    int *d = &b;
+    cout << "Value of a:" << a << "\t Value of b: " << *c << endl; // this will print the memory location of a given variable
+    *c = 100;
 
-    cout << "B:" << *b << "\t A: " << a << endl;
-    *b = 200;
-    cout << "B:" << *b << "\t A: " << a << endl;
+    cout << "*C:" << *c << "\t A: " << a << endl;
+    
+    cout << "*D:" << *d << "\t B: " << b << endl;
 }
-void pointerDemo()
+void changePointerValue_2()
 {
     int firstvalue = 5, secondvalue = 15;
     // int *p1, *p2;
@@ -83,7 +84,7 @@ int main()
     // pointerInit();
     // changing pointer value
     changePointerValue();
-    pointerDemo();
+    changePointerValue_2();
 
     // pointerWithArray();
     // pointerIO();
