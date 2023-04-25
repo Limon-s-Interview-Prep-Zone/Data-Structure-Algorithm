@@ -64,5 +64,8 @@
     "C_Cpp.errorSquiggles": "disabled",
     "code-runner.saveFileBeforeRun": true,
     "code-runner.runInTerminal": true,
-    "code-runner.clearPreviousOutput": true
+    "code-runner.clearPreviousOutput": true,
+    "explorer.compactFolders": false,
+    "C_Cpp.default.cppStandard": "",
+    "C_Cpp.default.cStandard": ""
 }
