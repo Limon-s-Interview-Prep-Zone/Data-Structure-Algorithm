@@ -1,1 +1,8 @@
-*.exe
+*
+!.gitignore
+!.md
+!.cpp
+!.py
+!.ipynb
+!.vscode
+!*/
