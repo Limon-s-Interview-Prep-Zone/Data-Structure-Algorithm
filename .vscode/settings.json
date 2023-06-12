@@ -69,5 +69,6 @@
     "code-runner.clearPreviousOutput": true,
     "explorer.compactFolders": false,
     "C_Cpp.default.cppStandard": "",
-    "C_Cpp.default.cStandard": ""
+    "C_Cpp.default.cStandard": "",
+    "cph.general.onceMaintainerMessage": false
 }

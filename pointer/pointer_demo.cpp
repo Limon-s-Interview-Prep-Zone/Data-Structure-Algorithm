@@ -4,9 +4,9 @@ void pointerInit()
 {
     int a = 12;
     // declare pointer
-    int *b;
+    int *b;// pointer only store variable address
     // assign address of var a to pointer b
-    b = &a;
+    b = &a; // reference 
 
     int **c = &b;
     cout << "C:" << c << "\tValue:" << **c << endl;
@@ -20,7 +20,7 @@ void changePointerValue()
     int a = 12, b = 14;
     int *c = &a;
     int *d = &b;
-    cout << "Value of a:" << a << "\t Value of b: " << *c << endl; // this will print the memory location of a given variable
+    cout << "Value of a:" << *c << "\t Value of b: " << *d << endl; // this will print the memory location of a given variable
     *c = 100;
 
     cout << "*C:" << *c << "\t A: " << a << endl;
@@ -30,19 +30,22 @@ void changePointerValue()
 void changePointerValue_2()
 {
     int firstvalue = 5, secondvalue = 15;
-    // int *p1, *p2;
 
     int *p1 = &firstvalue;  // p1 = address of firstvalue
     int *p2 = &secondvalue; // p2 = address of secondvalue
+    cout<<"Adress:"<<"&firstvalue= "<<&firstvalue<<"\t&secondvalue= "<<&secondvalue<<"\tp1="<<p1<<"\tp2="<<p2<<endl;
+    cout<<"Value:"<<"firstvalue= "<<firstvalue<<"\tsecondvalue= "<<secondvalue<<"\tp1="<<*p1<<"\tp2="<<*p2<<endl;
+
     *p1 = 10;               // value pointed to by p1 = 10
     *p2 = *p1;              // value pointed to by p2 = value pointed to by p1
-    // cout << "firstvalue is " << firstvalue << "\tP1:" << p1 << "\t *P1=" << *p1 << "\tP2:" << p2 << "\t *P2=" << *p2 << '\n';
-    p1 = p2; // p1 = p2 (value of pointer is copied)
-    // cout << "firstvalue is " << firstvalue << "\tP1:" << p1 << "\t *P1=" << *p1 << "\tP2:" << p2 << "\t *P2=" << *p2 << '\n';
-    *p1 = 20; // value pointed to by p1 = 20
+    cout<<"After:"<<"firstvalue= "<<&firstvalue<<"\tsecondvalue= "<<&secondvalue<<"\tp1="<<p1<<"\tp2="<<p2<<endl;
+    cout<<"Value:"<<"firstvalue= "<<firstvalue<<"\tsecondvalue= "<<secondvalue<<"\tp1="<<*p1<<"\tp2="<<*p2<<endl;
 
-    cout << "firstvalue is: " << firstvalue << "\tP1:" << p1 << "\t *P1=" << *p1 << '\n';
-    // cout << "secondvalue is " << secondvalue << "\tP2:" << p2 << "\t *P2=" << *p2 << '\n';
+    p1 = p2; // p1 = p2 (value of pointer is copied)
+    cout<<"Pointer Copied:"<<"firstvalue= "<<&firstvalue<<"\tsecondvalue= "<<&secondvalue<<"\tp1="<<p1<<"\tp2="<<p2<<endl;
+
+    *p1 = 20; // value pointed to by p1 = 20
+    cout<<"Value:"<<"firstvalue= "<<firstvalue<<"\tsecondvalue= "<<secondvalue<<"\tp1="<<*p1<<"\tp2="<<*p2<<endl;
 }
 void pointerWithArray()
 {
