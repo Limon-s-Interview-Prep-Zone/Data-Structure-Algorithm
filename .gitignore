@@ -1,8 +1,9 @@
-*
 !.gitignore
 !.md
 !.cpp
 !.py
 !.ipynb
 !.vscode
-!*/
+!/
+*.exe
+/*.dsym
