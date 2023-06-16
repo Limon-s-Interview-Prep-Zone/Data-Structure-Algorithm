@@ -70,5 +70,6 @@
     "explorer.compactFolders": false,
     "C_Cpp.default.cppStandard": "",
     "C_Cpp.default.cStandard": "",
-    "cph.general.onceMaintainerMessage": false
+    "cph.general.onceMaintainerMessage": false,
+    "cmake.configureOnOpen": true
 }

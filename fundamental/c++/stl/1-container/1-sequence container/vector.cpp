@@ -8,37 +8,37 @@ using namespace std;
 
 void initVector()
 {
-    vector<vector<int>> vect2d{// 2d array
-                               {1, 2, 3},
-                               {4, 5, 6},
-                               {7, 8, 9}};
-
-    cout << "\n Display Vector-1: ";
-    vector<int> initVect1 = {1, 2, 3, 4, 5}; // intializer list
+       vector<int> initVect1 = {1, 2, 3, 4, 5}; // intializer list
     for (const int &i : initVect1)
     {
         cout << i << " ";
     }
 
-    cout << "\n Display Vector-2: ";
+    cout << "\nDisplay Vector-2: ";
     vector<int> initVect2{6, 7, 8, 9, 10}; // uniform initialization
     for (const int i : initVect2)
     {
         cout << i << " ";
     }
 
-    cout << "\n Display Vector-3: ";
-    vector<int> initVect3(5, 12); // method 3
+    cout << "\nDisplay Vector-3: ";
+    vector<int> initVect3(4, 3); // method 3: (size, value)
     for (auto i : initVect3)
     {
         cout << i << " ";
     }
-
-    for (int i = 0; i < initVect3.size(); i++)
-    {
-        cout << initVect3[i] << " ";
+    cout<<"\n2-d vector example:::"<<endl;
+    vector<vector<int>> vect2d{
+                               {1, 2, 3},
+                               {4, 5, 6},
+                               {7, 8, 9}
+                            };
+    for(auto r: vect2d){
+        for(auto c: r){
+            cout<<c<<" ";
+        }
+        cout<<"\n";
     }
-    cout << endl;
 }
 /// @vector modification:
 /*
@@ -131,8 +131,3 @@ int main()
     vectorIterator();
     return 0;
 }
-/*
-Vector: Vecators are dynamic arrays with the ability to resize itself automatically when an item is insearted or deletated.
-
-    1.
-*/
