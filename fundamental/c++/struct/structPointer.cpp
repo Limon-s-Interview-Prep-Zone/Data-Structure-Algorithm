@@ -1,26 +1,38 @@
 #include <iostream>
 using namespace std;
 
-typedef struct Distance
+// declare struct
+struct Distance
 {
-    int feet;
-    float inch;
-} dis;
+    int latitude;
+    int longitude;
+};
+
+typedef struct Person
+{
+    string name;
+    int age;
+    Person *friendPtr;
+} p;
 
 int main()
 {
-    Distance *ptr, d;
+    struct Distance *ptr, d;
+    ptr = &d; // ptr point the address of d
+    (*ptr).latitude = 202;
+    d.longitude = 303;
+    cout << (*ptr).latitude << "  " << endl;
+    cout << ptr->longitude << "  " << endl; // 303 ->
 
-    ptr = &d;
+    cout << " using point in the strct" << endl;
+    p p1, p2;
+    p1.name = "Limon";
+    p2.age = 25;
 
-    cout << "Enter feet: ";
-    cin >> (*ptr).feet;
-    cout << "Enter inch: ";
-    cin >> (*ptr).inch;
+    p2.name = "Likhon";
+    p2.age = 23;
 
-    cout << "Displaying information." << endl;
-    cout << "Distance = " << (*ptr).feet << " feet " << (*ptr).inch << " inches" << endl;
-    cout << "Using -> = " << ptr->feet << " feet " << (*ptr).inch << " inches"; //  ptr->feet same as (*ptr).distance;
+    std ::cout << p2.name << " and " << p2.friendPtr->name << "are good friends" << endl;
 
     return 0;
 }
