@@ -1,28 +1,44 @@
 #include<iostream>
 using namespace std;
-void memoryLocation(){
-    int a=12;
-    int* b=&a;
-    int** c=&b;
-    cout<<"A="<<a<<"\t &A="<<&a<<endl;
-    cout<<"B="<<b<<"\t &B="<<&b<<endl;
-    cout<<"*&B="<<*(&b)<<"\t &*B="<<&(*b)<<endl;
-    cout<<"C="<<c<<"\t &c="<<*(&c)<<endl;
-}
 
 struct Node {
     int data;
     struct Node* next;
 };
-  
-// This function prints contents of linked list starting
-// from the given node
-void printList(struct Node* n)
+
+// insert at begin
+void push(struct Node** headRef, int newData){
+    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
+
+    node->data = newData;
+    node->next = (*headRef);
+    (*headRef) = node;
+}
+
+// insert at the end
+void append(struct Node** headRef, int newData){
+    struct Node* node = (struct Node*) malloc(sizeof(struct Node));
+    node->data = newData;
+
+    Node* last = *headRef;
+    node->next = NULL;
+
+    if(*headRef==NULL){
+        (*headRef) = node;
+        return;
+    }
+    while(last->next != NULL){
+        last= last->next;
+    }
+    last->next = node;
+}
+
+// print
+void traverse(struct Node* head)
 {
-    cout<<n<<endl;
-    while (n != NULL) {
-        cout<<n->data<<"\t";
-        n = n->next;
+    while (head != NULL) {
+       cout<<head->data<<" ";
+        head = head->next;
     }
 }
   
@@ -30,27 +46,9 @@ void printList(struct Node* n)
 int main()
 {
     struct Node* head = NULL;
-    struct Node* second = NULL;
-    struct Node* third = NULL;
-  
-    // allocate 3 nodes in the heap
-    head = (struct Node*)malloc(sizeof(struct Node));
-    second = (struct Node*)malloc(sizeof(struct Node));
-    third = (struct Node*)malloc(sizeof(struct Node));
-    
-    cout<<"Head: "<<head<<"\t sencond: "<<second<<"\t third: "<<third<<endl;
-
-    head->data = 1; // assign data in first node
-    head->next = second; // Link first node with second
-  
-    second->data = 2; // assign data to second node
-    second->next = third;
-  
-    third->data = 3; // assign data to third node
-    third->next = NULL;
-  
-    // Function call
-    printList(head);
-  
+    push(&head, 10);
+    append(&head, 100);
+    traverse(head);
+ 
     return 0;
 }
