@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void push(int *ref, int data)
+void push(int **ref, int data)
 {
+    cout<<ref<<endl;
 }
 
 int main()
@@ -11,8 +12,9 @@ int main()
     int *b = NULL; // &b = 404 b=0
     int **c = &b; // &c = 408 c = 404 
     cout<<&b<<endl; // &b = 404
-    cout<<*c<<endl; // *c = 404's value or b = 0  
-    cout<<&(*c)<<endl; // &(*c) = &b
-
+    // cout<<*c<<endl; // *c = 404's value or b = 0  
+    // cout<<&(*c)<<endl; // &(*c) = &b
+    
+    push(&b,10);
     return 0;
 }
