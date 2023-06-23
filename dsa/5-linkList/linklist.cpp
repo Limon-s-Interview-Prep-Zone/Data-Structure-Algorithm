@@ -12,8 +12,8 @@ void push(struct Node** headRef, int newData){
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
 
     node->data = newData;
-    node->next = (*headRef);
-    (*headRef) = node;
+    node->next = (*headRef); // value = 0
+    (*headRef) = node; // will be new memory address.
 }
 
 // insert at the end
@@ -88,7 +88,7 @@ void insertAtPosition(struct Node** head_ref, int data, int position){
             *head_ref = temp;
         }
         else{
-            head_ref = &(*head_ref)->next;
+            head_ref = &(*head_ref)->next; // will get the next memory address currently head contains
         }
     }
 }
