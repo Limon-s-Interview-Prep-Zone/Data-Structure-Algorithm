@@ -51,10 +51,10 @@ void divide(vector<int> &arr, int low, int high)
         return;
     // int mid = (high + low) / 2; // sometimes (high+low)>MAX_INIT so there will be an error.
     int mid = low + (high - low) / 2;
-    divide(arr, low, mid);      // left half
-    divide(arr, mid + 1, high); // right half
+    divide(arr, low, mid);      // left half logN
+    divide(arr, mid + 1, high); // right half logN
 
-    merge(arr, low, mid, high);
+    merge(arr, low, mid, high); // O(N)//wrost case // every time create an yempory array
     // conquer
 }
 int main()
@@ -70,3 +70,8 @@ int main()
     traverse(arr, n);
     return 0;
 }
+
+/**
+ * Time complexity: O(NlogN)
+ * Space complexity: O(N)
+*/
