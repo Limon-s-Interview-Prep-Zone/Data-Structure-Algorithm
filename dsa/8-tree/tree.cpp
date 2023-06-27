@@ -1,4 +1,6 @@
 #include <iostream>
+#include <queue>
+
 using namespace std;
 
 struct Node
@@ -34,7 +36,7 @@ void travere_preorder(Node *node)
 {
     if (node == NULL)
         return;
-    cout<<node->data<<" ";
+    cout << node->data << " ";
     travere_inorder(node->left);
     travere_inorder(node->right);
     /**
@@ -49,12 +51,19 @@ void travere_postorder(Node *node)
         return;
     travere_inorder(node->left);
     travere_inorder(node->right);
-    cout<<node->data<<" ";
+    cout << node->data << " ";
 
     /**
      * Time Complexity: O(N)
      * space complexity: O(h) height of the tree.
      */
+}
+
+unsigned int count_nodes(Node *root)
+{
+    if (root == NULL)
+        return 0;
+    return (1 + count_nodes(root->left) + count_nodes(root->right));
 }
 
 int main()
@@ -65,10 +74,12 @@ int main()
     root->left->left = crateNode(5);
 
     travere_inorder(root);
-    cout<<"\nPreorder: \n";
+    cout << "\nPreorder: \n";
     travere_preorder(root);
-    cout<<"\n Post Order: \n";
+    cout << "\n Post Order: \n";
     travere_postorder(root);
+
+    cout << " Total Nodes -> " << count_nodes(root) << endl;
 
     return 0;
 }
