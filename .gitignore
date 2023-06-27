@@ -1,3 +1,5 @@
 *.exe
 tempCodeRunnerFile.py
 tempCodeRunnerFile.cpp
+.vscode/
+*.json
