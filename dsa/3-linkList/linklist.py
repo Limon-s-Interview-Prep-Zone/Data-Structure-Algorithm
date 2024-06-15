@@ -50,4 +50,3 @@ if __name__=="__main__":
     l.display()
     l.append(555)
     l.display()
-    
