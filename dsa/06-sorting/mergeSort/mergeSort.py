@@ -45,8 +45,6 @@ def divide(arr, l, r):
     if l>=r:
         return
     if l < r:
-
-        # Same as (l+r)//2, but avoids overflow for
         m = l+(r-l)//2
 
         divide(arr, l, m)
@@ -56,15 +54,13 @@ def divide(arr, l, r):
 def traverse(arr):
 	for i in range(len(arr)):
 		print(arr[i],end=" ")
-		
-# Driver code to test above
-arr = [12, 11, 13, 5, 6, 7]
-n = len(arr)
-print("Given array is")
-traverse(arr)
 
-divide(arr, 0, n-1)
-print("\n\nSorted array is")
-traverse(arr)
+if __name__=='__main__':
+	arr = [12, 11, 13, 5, 6, 7]
+	n = len(arr)
+	print("Given array is")
+	traverse(arr)
 
-# This code is contributed by Mohit Kumra
+	divide(arr, 0, n-1)
+	print("\n\nSorted array is")
+	traverse(arr)
