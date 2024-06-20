@@ -30,3 +30,8 @@ if __name__ == "__main__":
     g.addEdge(3, 3)
     g.dfs(2)
     g.traverseGraph()
+
+'''
+TC: O(E+V) V is the number of vertices and E is the number of edges in the graph
+SC: O(V + E), visited array size V is required, And stack size=E
+'''

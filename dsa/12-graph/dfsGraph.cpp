@@ -40,3 +40,7 @@ int main()
 
     return 0;
 }
+/*
+TC: O(E+V) V is the number of vertices and E is the number of edges in the graph
+SC: O(V + E), visited array size V is required, And stack size=E
+*/
