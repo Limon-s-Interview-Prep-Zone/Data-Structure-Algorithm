@@ -61,7 +61,8 @@
         "algorithm": "cpp",
         "iostream": "cpp",
         "list": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "deque": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "code-runner.saveFileBeforeRun": true,
